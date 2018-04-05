@@ -6,7 +6,7 @@
 
 	<groupId>br.com.capela</groupId>
 	<artifactId>app1</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>app1</name>
