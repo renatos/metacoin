@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.google.api.client.http.HttpRequest;
@@ -29,16 +31,6 @@ import br.com.capela.app1.model.SaveCoinGameInfo.SaveCoinUrl;
 
 @Service
 public class GameInfoService {
-	static{
-		Properties systemProps = System.getProperties();
-		System.out.println("-----------------------------------------------");
-		System.out.println(GameInfoService.class.getClassLoader().getResource(".").getPath());
-		System.out.println("-----------------------------------------------");
-		systemProps.put( "javax.net.ssl.trustStore", GameInfoService.class.getClassLoader().getResource("clientkeystore").getPath());
-//		systemProps.put( "javax.net.ssl.trustStorePassword", "123456");
-		System.setProperties(systemProps);
-	}
-	
 	private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
 	private static final JsonFactory JSON_FACTORY = new JacksonFactory();
 
