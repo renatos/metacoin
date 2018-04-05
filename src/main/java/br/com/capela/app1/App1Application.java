@@ -31,7 +31,7 @@ public class App1Application {
 			InputStream is = GameInfoService.class.getClassLoader().getResourceAsStream("clientkeystore");
 			Files.copy(is, trustStore, StandardCopyOption.REPLACE_EXISTING); 
 			systemProps.put( "javax.net.ssl.trustStore", trustStore.toString());
-//			systemProps.put( "javax.net.ssl.trustStorePassword", "123456");
+			systemProps.put( "javax.net.ssl.trustStorePassword", "123456");
 			System.setProperties(systemProps);
 		}
 	}
